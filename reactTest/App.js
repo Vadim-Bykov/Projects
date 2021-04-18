@@ -1,34 +1,14 @@
 import React from 'react';
-import {
-  KeyboardAvoidingView,
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-} from 'react-native';
-import Todo from './src/components/Todo';
+import {StyleSheet, Text, View} from 'react-native';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const App = () => {
-  return (
-    <>
-      {/* <KeyboardAvoidingView behavior="padding" style={todoContainer}> */}
-      <Todo />
-      {/* </KeyboardAvoidingView> */}
-    </>
-  );
+  return <AppNavigator />;
 };
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-  },
-  todoContainer: {
-    flex: 1,
-  },
-});
+const styles = StyleSheet.create({});
 
 // rnstyle
 // rnfes

@@ -36,7 +36,7 @@ const Todo = () => {
   };
 
   const completeTodoItem = id => {
-    console.log(id);
+    // console.log(id);
     setTodoItems(
       todoItems.map(todoItem =>
         todoItem.id === id

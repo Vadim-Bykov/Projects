@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const TodoItem = ({
   title = 'No name task',
@@ -11,6 +11,14 @@ const TodoItem = ({
     <View style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={isComplete && styles.textComplete}>{title}</Text>
+        <Image
+          style={styles.tinyLogo}
+          // source={{
+          //   uri:
+          //     'https://pbs.twimg.com/profile_images/875749462957670400/T0lwiBK8_400x400.jpg',
+          // }}
+          source={require('../assets/logo.png')}
+        />
       </View>
 
       <View>
@@ -46,6 +54,8 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   textComplete: {
     textDecorationLine: 'line-through',
@@ -68,5 +78,9 @@ const styles = StyleSheet.create({
     color: '#fff',
     //  textAlign: 'center',
     alignSelf: 'center',
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
   },
 });
