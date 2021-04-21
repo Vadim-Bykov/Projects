@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 
-const AnotherScreen = ({navigation}) => {
+export const AnotherScreen = ({navigation}) => {
   const toggleMenu = () => navigation.toggleDrawer();
 
   return (
@@ -11,8 +11,6 @@ const AnotherScreen = ({navigation}) => {
     </View>
   );
 };
-
-export default AnotherScreen;
 
 const styles = StyleSheet.create({
   container: {

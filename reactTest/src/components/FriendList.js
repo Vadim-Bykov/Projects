@@ -1,8 +1,8 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import Friend from './Friend';
+import {Friend} from './Friend';
 
-const FriendList = ({friends, goToFriend}) => {
+export const FriendList = ({friends, goToFriend}) => {
   return (
     <FlatList
       data={friends}
@@ -13,5 +13,3 @@ const FriendList = ({friends, goToFriend}) => {
     />
   );
 };
-
-export default FriendList;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 
-const GroupsScreen = ({navigation}) => {
+export const GroupsScreen = ({navigation}) => {
   const toggleMenu = () => navigation.toggleDrawer();
 
   return (
@@ -11,8 +11,6 @@ const GroupsScreen = ({navigation}) => {
     </View>
   );
 };
-
-export default GroupsScreen;
 
 const styles = StyleSheet.create({
   container: {
