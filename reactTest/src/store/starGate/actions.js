@@ -1,5 +1,10 @@
-import {CARDS_SET_CARDS} from './actionTypes';
+import * as types from './actionTypes';
 export const setCards = cards => ({
-  type: CARDS_SET_CARDS,
+  type: types.CARDS_SET_CARDS,
   cards,
+});
+
+export const filterCards = filter => ({
+  type: types.CARDS_FILTER_CARDS,
+  filter,
 });

@@ -1,12 +1,22 @@
-import {CARDS_SET_CARDS} from './actionTypes';
+import * as types from './actionTypes';
 import {initialState} from './state';
 
 export const starGateReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CARDS_SET_CARDS:
+    case types.CARDS_SET_CARDS:
       return {
         ...state,
         cards: action.cards,
+      };
+
+    case types.CARDS_FILTER_CARDS:
+      return {
+        ...state,
+        filteredCards: action.filter
+          ? state.cards.filter(card =>
+              card.name.toUpperCase().includes(action.filter.toUpperCase()),
+            )
+          : [],
       };
 
     default:

@@ -1,14 +1,17 @@
 import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
+import {BurgerMenu} from '../common/BurgerMenu';
 
 export const AnotherScreen = ({navigation}) => {
   const toggleMenu = () => navigation.toggleDrawer();
 
   return (
-    <View style={styles.container}>
-      <Text>Еще</Text>
-      <Button title="Side menu" onPress={toggleMenu} />
-    </View>
+    <>
+      <BurgerMenu toggleMenu={toggleMenu} />
+      <View style={styles.container}>
+        <Text>Еще</Text>
+      </View>
+    </>
   );
 };
 

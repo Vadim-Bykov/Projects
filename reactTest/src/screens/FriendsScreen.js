@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Button, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import {BurgerMenu} from '../common/BurgerMenu';
 import {FriendList} from '../components/FriendList';
 
 export const FriendsScreen = ({navigation}) => {
@@ -29,10 +30,12 @@ export const FriendsScreen = ({navigation}) => {
   const toggleMenu = () => navigation.toggleDrawer();
 
   return (
-    <View style={styles.container}>
-      <FriendList friends={friends} goToFriend={goToFriend} />
-      <Button title="Side menu" onPress={toggleMenu} />
-    </View>
+    <>
+      <BurgerMenu toggleMenu={toggleMenu} />
+      <View style={styles.container}>
+        <FriendList friends={friends} goToFriend={goToFriend} />
+      </View>
+    </>
   );
 };
 
