@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 const FriendScreen = ({route}) => {
   return (
     <View style={styles.container}>
-      <Text>Friend {route.params.name}</Text>
+      <Text>Friend: {route.params.name}</Text>
     </View>
   );
 };
@@ -14,7 +14,7 @@ export default FriendScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
 });

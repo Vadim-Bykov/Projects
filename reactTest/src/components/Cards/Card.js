@@ -4,6 +4,7 @@ import {w} from '../../consts/consts';
 
 export const Card = ({card, goToDescription}) => {
   const {name, image} = card;
+  console.log(name);
 
   let shortName = name.split(' ');
   shortName = shortName.length > 1 ? shortName.slice(1).join(' ') : name;

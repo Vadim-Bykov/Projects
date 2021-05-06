@@ -2,10 +2,10 @@
   /* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} /> */
 }
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import AppNavigator from './src/navigators/AppNavigator';
+import {StyleSheet} from 'react-native';
+import AppTabNavigator from './app/navigators/AppTabNavigator';
 
-const App = () => <AppNavigator />;
+const App = () => <AppTabNavigator />;
 
 export default App;
 
