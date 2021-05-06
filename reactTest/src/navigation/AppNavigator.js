@@ -14,6 +14,13 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Foundation from 'react-native-vector-icons/Foundation';
 import {Provider} from 'react-redux';
 import store from '../store/store';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
 const FeedNavigator = createStackNavigator();
 
@@ -109,14 +116,18 @@ const MyTabs = () => (
   </Tab.Navigator>
 );
 
+const queryClient = new QueryClient();
+
 export const AppNavigator = () => (
-  <NavigationContainer>
-    <Provider store={store}>
-      <SafeAreaView style={styles.container}>
-        <MyTabs />
-      </SafeAreaView>
-    </Provider>
-  </NavigationContainer>
+  <QueryClientProvider client={queryClient}>
+    <NavigationContainer>
+      <Provider store={store}>
+        <SafeAreaView style={styles.container}>
+          <MyTabs />
+        </SafeAreaView>
+      </Provider>
+    </NavigationContainer>
+  </QueryClientProvider>
 );
 
 const styles = StyleSheet.create({

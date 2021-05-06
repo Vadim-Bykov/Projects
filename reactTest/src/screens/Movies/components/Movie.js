@@ -1,18 +1,18 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {w} from '../../consts/consts';
+import {w, baseUrlImage} from '../../../consts/consts';
 
-export const Card = ({card, goToDescription}) => {
-  const {name, image} = card;
-
-  let shortName = name.split(' ');
-  shortName = shortName.length > 1 ? shortName.slice(1).join(' ') : name;
+export const Movie = ({movie, goToDescription}) => {
+  const {title, poster_path} = movie;
 
   return (
-    <TouchableOpacity onPress={() => goToDescription(card)}>
+    <TouchableOpacity onPress={() => goToDescription(movie)}>
       <View style={styles.container}>
-        <Image source={{uri: image}} style={styles.image} />
-        <Text style={styles.title}>{shortName}</Text>
+        <Image
+          source={{uri: `${baseUrlImage}w185/${poster_path}`}}
+          style={styles.image}
+        />
+        <Text style={styles.title}>{title}</Text>
       </View>
     </TouchableOpacity>
   );

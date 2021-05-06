@@ -5,6 +5,7 @@ import {GroupsScreen} from '../screens/GroupsScreen';
 import {MusicScreen} from '../screens/MusicScreen';
 import {FriendsNavigator} from './FriendsNavigator';
 import {CardsNavigator} from './CardsNavigator';
+import {MoviesNavigator} from './MoviesNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,6 +17,7 @@ export const MyDrawer = () => {
       <Drawer.Screen name="Music" component={MusicScreen} />
       <Drawer.Screen name="Friends" component={FriendsNavigator} />
       <Drawer.Screen name="Cards" component={CardsNavigator} />
+      <Drawer.Screen name="Movies" component={MoviesNavigator} />
     </Drawer.Navigator>
   );
 };
