@@ -4,6 +4,7 @@ import {w, baseUrlImage} from '../../consts/consts';
 
 export const MovieScreen = ({route}) => {
   const {title, release_date, poster_path, info} = route.params.movie;
+
   return (
     <ScrollView
       style={styles.container}

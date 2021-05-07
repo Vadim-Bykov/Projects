@@ -1,8 +1,10 @@
 import React from 'react';
 import {FlatList} from 'react-native';
+import {useQueryClient} from 'react-query';
 import {Movie} from './Movie';
 
-export const MoviesList = ({movies, goToDescription}) => {
+export const MoviesList = ({goToDescription}) => {
+  const movies = useQueryClient().getQueryData('movies');
   return (
     <FlatList
       numColumns={2}
