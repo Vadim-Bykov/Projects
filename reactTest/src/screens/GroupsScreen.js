@@ -1,15 +1,33 @@
-import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Button, NativeModules, StyleSheet, Text, View} from 'react-native';
 import {BurgerMenu} from '../common/BurgerMenu';
+
+const {BatteryLevel, CalendarModule} = NativeModules;
 
 export const GroupsScreen = ({navigation}) => {
   const toggleMenu = () => navigation.toggleDrawer();
+
+  const [level, setLevel] = useState(0);
+  const [event, setEvent] = useState('No events');
 
   return (
     <>
       <BurgerMenu toggleMenu={toggleMenu} />
       <View style={styles.container}>
-        <Text>Groups</Text>
+        <Text>{level}%</Text>
+        <Text>{event}</Text>
+        <Button
+          title="Get BatteryLevel"
+          onPress={() => {
+            BatteryLevel.getLevel(batteryLevel =>
+              setLevel(batteryLevel.toFixed(2) * 100),
+            );
+
+            CalendarModule.createCalendarEvent('Party', 'My House', id =>
+              setEvent(`New event with id ${id}`),
+            );
+          }}
+        />
       </View>
     </>
   );
