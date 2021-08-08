@@ -1,17 +1,21 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+// import { SharedElement } from 'react-native-shared-element';
+import { SharedElement } from 'react-navigation-shared-element';
 import {w, baseUrlImage} from '../../../consts/consts';
 
 export const Movie = ({movie, goToDescription}) => {
-  const {title, poster_path} = movie;
+  const {title, poster_path, id} = movie;
 
   return (
     <TouchableOpacity onPress={() => goToDescription(movie)}>
       <View style={styles.container}>
-        <Image
+        <SharedElement id={id}> 
+          <Image
           source={{uri: `${baseUrlImage}w185/${poster_path}`}}
           style={styles.image}
-        />
+          />
+        </SharedElement>
         <Text style={styles.title}>{title}</Text>
       </View>
     </TouchableOpacity>
